@@ -6,13 +6,13 @@ let resetBtn = document.getElementById("reset_btn")
 let search = document.getElementById("search")
 let errorMsg = document.querySelector(".error-msg")
 
-let loading = true; // ye loading wala for shimme UI
+let loading = true; 
 
 
 function hideShimmer() {
-    const shimmers = document.querySelectorAll(".shimmer-card")
-    shimmers.forEach((item) => item.style.display = "none")
-    loading = false
+    const shimmers = document.querySelectorAll(".shimmer-card");
+    shimmers.forEach((item) => item.style.display = "none");
+    loading = false;
 }
 
 function pokeCard(data) {
@@ -44,13 +44,12 @@ function pokeCard(data) {
             </div>
         </div>
     `;
-    let innerCard = itemCard.querySelector(".card-inner")
+    let innerCard = itemCard.querySelector(".card-inner");
     innerCard.classList.add(`${data.types[0].type.name}`);
 
     return itemCard;
 }
 
-// data api se fetch krne ke liye async function
 async function fetchPokeData() {
     for (let i = 1; i < 151; i++) {
         if (i === 15) hideShimmer();
@@ -69,26 +68,26 @@ function filterCards() {
     let filterValue = document.getElementById("pokemon-types").value;
 
     allCards.forEach(card => {
+        let type = card.querySelector(".card-inner").classList[1]; // Get Pokémon type from class (e.g., "grass", "fire")
+
         if (filterValue === "all") {
             card.style.display = "block";
             search.value = "";
-        }
-        else if (card.querySelector(".card-inner").card.classList.contains(filterValue)) {
+        } else if (type === filterValue) {
             card.style.display = "block";
-
         } else {
             card.style.display = "none";
         }
     });
-
 }
 
 function resetAll() {
     let allCards = document.querySelectorAll(".card");
     allCards.forEach(card => {
-        card.style.display = "block"
+        card.style.display = "block";
     })
-    search.value = ""
+    search.value = "";
+    document.getElementById("pokemon-types").value = "all"; 
 }
 
 function searchFilter() {
@@ -98,9 +97,9 @@ function searchFilter() {
     allCards.forEach((card) => {
         let naam = card.querySelector(".name").textContent;
         if (naam.startsWith(searchValue)) {
-            card.style.display = "block"
+            card.style.display = "block";
         } else {
-            card.style.display = "none"
+            card.style.display = "none";
 
         }
     })

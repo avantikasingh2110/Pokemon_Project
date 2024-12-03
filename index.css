@@ -62,7 +62,14 @@ body {
     margin: 10px;
     border: 4px solid #FFCB05;
     border-radius: 30px;
-    /* font-family: "Laila", serif; */
+}
+
+#search {
+    width: 250px; 
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 #search::placeholder {
