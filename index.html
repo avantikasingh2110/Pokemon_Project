@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,18 @@
     <link rel="icon" href="./images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Audiowide&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Butterfly+Kids&family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Fuzzy+Bubbles:wght@400;700&family=Loved+by+the+King&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Prociono&family=Rubik+Wet+Paint&family=Sixtyfour+Convergence&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Audiowide&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Butterfly+Kids&family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Fuzzy+Bubbles:wght@400;700&family=Loved+by+the+King&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Prociono&family=Rubik+Wet+Paint&family=Sixtyfour+Convergence&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <div>
+    <div id="parent_div">
         <div id="heading_div">
             <img src="./images/logo png.png" alt="" height="100px">
-         </div>
-    
-         <div id="input_field">
+        </div>
+
+        <div id="input_field">
             <select name="pokemon-types" id="pokemon-types">
                 <option value="all">Select-Types</option>
                 <option value="grass">Grass</option>
@@ -24,18 +28,30 @@
                 <option value="water">Water</option>
                 <option value="bug">Bug</option>
                 <option value="normal">Normal</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-             </select>
-         </div>
+                <option value="poison">Poison</option>
+                <option value="electric">Electric</option>
+                <option value="ground">Ground</option>
+                <option value="fairy">Fairy</option>
+                <option value="fighting">Fighting</option>
+                <option value="psychic">Psychic</option>
+                <option value="rock">Rock</option>
+                <option value="ghost">Ghost</option>
+                <option value="ice">Ice</option>
+                <option value="dragon">Dragon</option>
+            </select>
+
+            <button id="filter_btn">Filter by Type</button>
+            <input type="text" name="search" id="search" placeholder="Enter Pokemon Card">
+            <button id="reset_btn">Reset</button>
+
+        </div>
+
+        <div class="container">
+            <!-- all poke card will be rendered here -->
+            <h1 class="error-msg">NO CARD FOUND</h1>
+        </div>
     </div>
+    <script src="./script.js"></script>
 </body>
+
 </html>
